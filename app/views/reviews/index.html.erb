@@ -2,15 +2,15 @@
   <%= render 'form' %>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-success">
   <div class="panel-heading">
     新着口コミ一覧
   </div>
   <div class="panel-body">
     <% @reviews.each do |review| %>
       <a href="/reviews/<%= review.id %>"><%= review.title %></a>
-      <span class="label label-info"><%= review.comic_name %></span>
-      <span class="label label-primary"><%= review.name %></span>
+      <span class="label label-primary"><%= review.comic_name %></span>
+      <span class="label label-success"><%= review.name %></span>
       <br>
     <% end %>
   </div>
