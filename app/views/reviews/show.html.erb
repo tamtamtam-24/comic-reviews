@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3><%= @review.comic_name %>:<%= @review.name %>さんの投稿</span></h3>
+  </div>
+  <div class="panel-body">
+    <div class="title">
+      <%= @review.title %>
+    </div>
+    <br>
+    <%= @review.body %>
+    <div class="right">
+      <%= link_to "edit", edit_review_path(@review) %>/<%= link_to "destroy", @review, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<%= form_for @review, html: {class: 'form-horizontal'} do |f| %>
+  <% if @review.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @review.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <div class="col-sm-12 form-inline">
+      <label for="review_name">名前:</label>
+      <%= f.text_field :name, class: "form-control" %>
+      
+      <label for="review_comic_name">マンガタイトル:</label>
+      <%= f.text_field :comic_name, class: "form-control" %>
+    
+      <label for="review_title">口コミタイトル:</label>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-sm-12 form-group">
+    <label for="review_body">口コミ:</label>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <div class="col-sm-9 form-group">
+    <%= f.submit class: "btn btn-sm btn-primary" %>
+  </div>
+<% end %>
